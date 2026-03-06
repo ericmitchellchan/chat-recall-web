@@ -13,10 +13,10 @@ export default function Footer() {
           <a href="#pricing" className="transition hover:text-neutral-200">
             Pricing
           </a>
-          <a href="/privacy" className="transition hover:text-neutral-200">
+          <a href="/legal/privacy" className="transition hover:text-neutral-200">
             Privacy
           </a>
-          <a href="/terms" className="transition hover:text-neutral-200">
+          <a href="/legal/terms" className="transition hover:text-neutral-200">
             Terms
           </a>
         </nav>
