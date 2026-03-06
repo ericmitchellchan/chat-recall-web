@@ -1,11 +1,17 @@
+import Hero from "@/components/landing/Hero";
+import Features from "@/components/landing/Features";
+import HowItWorks from "@/components/landing/HowItWorks";
+import Pricing from "@/components/landing/Pricing";
+import Footer from "@/components/landing/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-6">
-      <h1 className="text-5xl font-bold tracking-tight">Chat Recall</h1>
-      <p className="mt-4 text-xl text-neutral-400">
-        Switch AIs. Keep everything.
-      </p>
-      <p className="mt-8 text-neutral-500">Coming soon</p>
+    <main className="min-h-screen bg-neutral-950 text-neutral-50">
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <Pricing />
+      <Footer />
     </main>
   );
 }
