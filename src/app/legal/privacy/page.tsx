@@ -7,10 +7,84 @@ export default function PrivacyPage() {
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        Last updated: March 5, 2026
+        Last updated: March 6, 2026
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed text-neutral-300">
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-100">
+            Our Commitments
+          </h2>
+          <p className="mt-2">
+            Privacy is not a feature — it is the foundation of Chat Recall.
+            Every design decision filters through one question: &quot;Would we
+            trust this with our own conversation history?&quot; These commitments
+            are non-negotiable:
+          </p>
+          <ol className="mt-3 list-inside list-decimal space-y-2 text-neutral-400">
+            <li>
+              <strong className="text-neutral-200">
+                We never read your conversations.
+              </strong>{" "}
+              Our servers process data for indexing. No human reviews content. No
+              content is used for analytics, training, or any purpose beyond
+              serving it back to you.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                We never train on your data.
+              </strong>{" "}
+              Not ours, not a third party&apos;s. Your conversations are not
+              training data.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                We never sell your data.
+              </strong>{" "}
+              No data brokers, no ad networks, no &quot;anonymized&quot; data
+              sales.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                We never share your data.
+              </strong>{" "}
+              No third-party access. The only system that reads your data is the
+              one serving it back to you via MCP or the web dashboard.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                You can delete everything, anytime.
+              </strong>{" "}
+              One-click account deletion removes all conversations, user data,
+              and metadata. Deletion is real — not &quot;marked as
+              deleted,&quot; actually purged.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                You can export everything, anytime.
+              </strong>{" "}
+              Download your full archive as JSON. No lock-in.
+            </li>
+            <li>
+              <strong className="text-neutral-200">
+                Encryption at rest.
+              </strong>{" "}
+              All conversation data encrypted at rest via AWS RDS encryption
+              (AES-256). Data in transit encrypted via TLS.
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-100">
+            No Tiered Privacy
+          </h2>
+          <p className="mt-2">
+            Every user — trial or paid — gets identical privacy protections.
+            There is no &quot;premium security&quot; tier. Trust is binary.
+          </p>
+        </section>
+
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
             1. What We Collect
@@ -18,20 +92,27 @@ export default function PrivacyPage() {
           <p className="mt-2">We collect the following data:</p>
           <ul className="mt-2 list-inside list-disc space-y-1 text-neutral-400">
             <li>
-              <strong className="text-neutral-300">Account information:</strong>{" "}
-              Email address, name, and avatar from your OAuth provider (GitHub
-              or Google)
+              <strong className="text-neutral-300">
+                Account information:
+              </strong>{" "}
+              Email address, name, and avatar from your OAuth provider (GitHub or
+              Google)
             </li>
             <li>
               <strong className="text-neutral-300">Conversation data:</strong>{" "}
-              AI conversation history that you explicitly upload or sync
+              AI conversation history that you explicitly upload
             </li>
             <li>
-              <strong className="text-neutral-300">Usage data:</strong>{" "}
-              Basic analytics (page views, feature usage) to improve the Service
+              <strong className="text-neutral-300">
+                Anonymous counters:
+              </strong>{" "}
+              Aggregate topic counts with no user ID attached — used only for
+              anonymous, aggregate reporting
             </li>
             <li>
-              <strong className="text-neutral-300">Billing information:</strong>{" "}
+              <strong className="text-neutral-300">
+                Billing information:
+              </strong>{" "}
               Processed by Stripe. We do not store credit card numbers
             </li>
           </ul>
@@ -42,30 +123,68 @@ export default function PrivacyPage() {
             2. How We Store Your Data
           </h2>
           <p className="mt-2">
-            Your data is stored in Amazon Web Services (AWS) infrastructure,
-            specifically in an RDS PostgreSQL database with encryption at rest
-            and in transit. Backups are encrypted and retained for disaster
-            recovery purposes.
+            Your data is stored in Amazon Web Services (AWS) infrastructure, in
+            an RDS PostgreSQL database with AES-256 encryption at rest and TLS
+            encryption in transit. Automated backups are encrypted. Data stays in
+            the AWS region where it is stored — no cross-border transfers.
           </p>
         </section>
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            3. What We Never Do
+            3. Data Isolation
           </h2>
-          <p className="mt-2">We commit to never:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1 text-neutral-400">
-            <li>Train AI models on your conversation data</li>
-            <li>Share your data with third parties for marketing or advertising</li>
-            <li>Display advertisements</li>
-            <li>Sell your personal information</li>
-            <li>Access your conversation content except for technical support with your explicit permission</li>
-          </ul>
+          <p className="mt-2">
+            All database queries are filtered by your user ID. There is no API
+            endpoint or query path that can access another user&apos;s data.
+            Multi-tenant isolation is enforced at the application layer: API
+            middleware injects your user ID from the authenticated session, and
+            every query includes user-scoped filtering.
+          </p>
         </section>
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            4. Third-Party Services
+            4. Data Retention
+          </h2>
+          <p className="mt-2">
+            We retain your data according to the following policy:
+          </p>
+          <ul className="mt-3 list-inside list-disc space-y-2 text-neutral-400">
+            <li>
+              <strong className="text-neutral-300">Active trial or subscription:</strong>{" "}
+              All data retained with full access.
+            </li>
+            <li>
+              <strong className="text-neutral-300">
+                Trial expired or subscription cancelled:
+              </strong>{" "}
+              Data retained for 30 days. Access is suspended, but your data is
+              safe. Subscribe (or resubscribe) within 30 days to restore full
+              access.
+            </li>
+            <li>
+              <strong className="text-neutral-300">
+                30+ days after expiry or cancellation:
+              </strong>{" "}
+              All data is permanently deleted — conversations, threads, messages,
+              search index, and user record.
+            </li>
+            <li>
+              <strong className="text-neutral-300">Manual account deletion:</strong>{" "}
+              Immediate permanent deletion of all data.
+            </li>
+          </ul>
+          <p className="mt-3">
+            We send email notifications at key points: when your trial expires,
+            10 days before data deletion, and when deletion occurs. We do not
+            hoard data from users who are not using the product.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-100">
+            5. Third-Party Services
           </h2>
           <p className="mt-2">We use the following third-party services:</p>
           <ul className="mt-2 list-inside list-disc space-y-1 text-neutral-400">
@@ -74,20 +193,20 @@ export default function PrivacyPage() {
               OAuth authentication only. We receive your email, name, and avatar
             </li>
             <li>
-              <strong className="text-neutral-300">Stripe:</strong>{" "}
-              Payment processing for Pro subscriptions. Stripe handles all
-              payment data under their own privacy policy
+              <strong className="text-neutral-300">Stripe:</strong> Payment
+              processing. Stripe handles all payment data under their own privacy
+              policy
             </li>
             <li>
-              <strong className="text-neutral-300">AWS:</strong>{" "}
-              Cloud infrastructure for hosting and data storage
+              <strong className="text-neutral-300">AWS:</strong> Cloud
+              infrastructure for hosting and data storage
             </li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            5. Your Rights (GDPR & CCPA)
+            6. Your Rights (GDPR & CCPA)
           </h2>
           <p className="mt-2">You have the right to:</p>
           <ul className="mt-2 list-inside list-disc space-y-1 text-neutral-400">
@@ -96,34 +215,22 @@ export default function PrivacyPage() {
               data we hold about you via your dashboard
             </li>
             <li>
-              <strong className="text-neutral-300">Export:</strong> Download
-              your conversation data at any time
+              <strong className="text-neutral-300">Export:</strong> Download your
+              full conversation archive as JSON at any time
             </li>
             <li>
-              <strong className="text-neutral-300">Delete:</strong> Request
-              permanent deletion of all your data. Use the delete account
-              option in Settings, or contact us
+              <strong className="text-neutral-300">Delete:</strong> Permanently
+              delete all your data immediately via account settings
             </li>
             <li>
-              <strong className="text-neutral-300">Rectification:</strong>{" "}
-              Update your account information through Settings
+              <strong className="text-neutral-300">Rectification:</strong> Update
+              your account information through settings
             </li>
           </ul>
           <p className="mt-2">
-            Data deletion requests are processed within 30 days. All
-            conversation data, account information, and backups are permanently
-            removed.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-100">
-            6. Data Retention
-          </h2>
-          <p className="mt-2">
-            We retain your data for as long as your account is active. If you
-            delete your account, all data is permanently removed within 30
-            days. We do not retain conversation data after account deletion.
+            Manual deletion requests are processed immediately. All conversation
+            data, account information, and backups are permanently purged. A data
+            processing agreement is available on request for EU users.
           </p>
         </section>
 
@@ -132,8 +239,8 @@ export default function PrivacyPage() {
             7. Cookies
           </h2>
           <p className="mt-2">
-            We use essential cookies only for authentication (session tokens).
-            We do not use tracking cookies or third-party analytics cookies.
+            We use essential cookies only for authentication (session tokens). We
+            do not use tracking cookies or third-party analytics cookies.
           </p>
         </section>
 
@@ -154,10 +261,10 @@ export default function PrivacyPage() {
           <p className="mt-2">
             For privacy questions or data requests, contact us at{" "}
             <a
-              href="mailto:privacy@chatrecall.dev"
+              href="mailto:privacy@chatrecall.ai"
               className="text-emerald-400 hover:text-emerald-300"
             >
-              privacy@chatrecall.dev
+              privacy@chatrecall.ai
             </a>
             .
           </p>
