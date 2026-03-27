@@ -75,7 +75,7 @@ export default function UploadPage() {
         method: "POST",
         body: formData,
         headers: {
-          Authorization: `Bearer ${(session as any).accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
       });
 

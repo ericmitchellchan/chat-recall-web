@@ -36,7 +36,7 @@ export default function BillingPage() {
     try {
       const res = await fetch(`${API_URL}/billing/status`, {
         headers: {
-          Authorization: `Bearer ${(session as any)?.accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
       });
       if (!res.ok) throw new Error(`Failed to load billing status: ${res.status}`);
@@ -56,7 +56,7 @@ export default function BillingPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${(session as any)?.accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
         body: JSON.stringify({ plan }),
       });
@@ -78,7 +78,7 @@ export default function BillingPage() {
       const res = await fetch(`${API_URL}/billing/cancel`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${(session as any)?.accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
       });
       if (!res.ok) throw new Error(`Cancellation failed: ${res.status}`);

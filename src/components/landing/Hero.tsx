@@ -16,10 +16,10 @@ export default function Hero() {
       </p>
       <div className="mt-10 flex gap-4">
         <Link
-          href="/auth/signin"
+          href="/auth/signup"
           className="rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-emerald-400"
         >
-          Get Started Free
+          Start Free Trial
         </Link>
         <a
           href="#how-it-works"

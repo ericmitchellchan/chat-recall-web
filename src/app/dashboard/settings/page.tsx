@@ -23,7 +23,7 @@ export default function SettingsPage() {
       await fetch(`${apiUrl}/account`, {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${(session as any)?.accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
       });
       signOut({ callbackUrl: "/" });

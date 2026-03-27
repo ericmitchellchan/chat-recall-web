@@ -1,4 +1,5 @@
 import type { AuthOptions } from "next-auth";
+import { encode } from "next-auth/jwt";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -89,6 +90,10 @@ export const authOptions: AuthOptions = {
       if (session.user && token.sub) {
         session.user.id = token.sub;
       }
+      session.accessToken = await encode({
+        token,
+        secret: process.env.NEXTAUTH_SECRET || "",
+      });
       return session;
     },
   },

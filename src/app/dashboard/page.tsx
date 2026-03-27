@@ -47,7 +47,7 @@ export default function DashboardPage() {
     try {
       const res = await fetch(`${API_URL}/stats`, {
         headers: {
-          Authorization: `Bearer ${(session as any)?.accessToken || ""}`,
+          Authorization: `Bearer ${session?.accessToken || ""}`,
         },
       });
       if (!res.ok) throw new Error(`Failed to load stats: ${res.status}`);
