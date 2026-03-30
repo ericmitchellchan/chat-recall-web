@@ -7,7 +7,7 @@ export default function TermsPage() {
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-3xl font-bold">Terms of Service</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        Last updated: March 6, 2026
+        Last updated: March 27, 2026
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed text-neutral-300">
@@ -40,10 +40,10 @@ export default function TermsPage() {
             3. Account Registration
           </h2>
           <p className="mt-2">
-            You may sign up using GitHub or Google OAuth, or email and password.
-            You are responsible for maintaining the security of your account. You
-            must provide accurate information and promptly update it if it
-            changes.
+            You must be at least 13 years old to use this service. You may sign
+            up using GitHub or Google OAuth, or email and password. You are
+            responsible for maintaining the security of your account. You must
+            provide accurate information and promptly update it if it changes.
           </p>
         </section>
 
@@ -103,7 +103,19 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            7. Data Retention
+            7. Uploaded Content
+          </h2>
+          <p className="mt-2">
+            You represent that you have the right to upload and store any data
+            you import into Chat Recall. You agree to indemnify and hold
+            harmless Chat Recall against any claims, damages, or expenses
+            arising from content you upload.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-100">
+            8. Data Retention
           </h2>
           <p className="mt-2">
             When your trial expires or your subscription is cancelled:
@@ -114,8 +126,8 @@ export default function TermsPage() {
               Access is suspended, but your data remains intact.
             </li>
             <li>
-              You will receive email notifications: at expiry, 10 days before
-              deletion, and upon deletion.
+              You will receive email notifications: when your trial expires,
+              when you enter the 30-day grace period, and when deletion occurs.
             </li>
             <li>
               Subscribe (or resubscribe) within 30 days to restore full access
@@ -136,7 +148,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            8. Data Export
+            9. Data Export
           </h2>
           <p className="mt-2">
             You may export your full conversation archive as JSON at any time
@@ -146,7 +158,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            9. Acceptable Use
+            10. Acceptable Use
           </h2>
           <p className="mt-2">You agree not to:</p>
           <ul className="mt-2 list-inside list-disc space-y-1 text-neutral-400">
@@ -166,7 +178,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            10. Account Termination
+            11. Account Termination
           </h2>
           <p className="mt-2">
             We may suspend or terminate your account if you violate these Terms.
@@ -177,7 +189,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            11. Limitation of Liability
+            12. Limitation of Liability
           </h2>
           <p className="mt-2">
             The Service is provided &quot;as is&quot; without warranties of any
@@ -189,7 +201,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            12. Dispute Resolution
+            13. Dispute Resolution
           </h2>
           <p className="mt-2">
             Any disputes shall be resolved through binding arbitration in
@@ -201,7 +213,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            13. Changes to Terms
+            14. Changes to Terms
           </h2>
           <p className="mt-2">
             We may update these Terms from time to time. We will notify you of
@@ -212,7 +224,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            14. Contact
+            15. Contact
           </h2>
           <p className="mt-2">
             Questions about these Terms? Contact us at{" "}

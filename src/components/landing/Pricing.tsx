@@ -9,7 +9,7 @@ const tiers = [
     features: [
       "Unlimited conversations",
       "Full-text search",
-      "All importers (ChatGPT, Claude, Notion)",
+      "ChatGPT import (more coming soon)",
       "Thread organization",
       "MCP integration",
     ],
@@ -26,7 +26,7 @@ const tiers = [
     features: [
       "Unlimited conversations",
       "Full-text search",
-      "All importers (ChatGPT, Claude, Notion)",
+      "ChatGPT import (more coming soon)",
       "Thread organization",
       "MCP integration",
     ],

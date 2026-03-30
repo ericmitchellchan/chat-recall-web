@@ -7,7 +7,7 @@ export default function PrivacyPage() {
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        Last updated: March 6, 2026
+        Last updated: March 27, 2026
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed text-neutral-300">
@@ -46,10 +46,12 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong className="text-neutral-200">
-                We never share your data.
+                We minimize data sharing.
               </strong>{" "}
-              No third-party access. The only system that reads your data is the
-              one serving it back to you via MCP or the web dashboard.
+              We share the minimum data necessary with service providers: Stripe
+              receives your email for billing, Vercel hosts the web dashboard,
+              and AWS hosts the API and database. None of these providers have
+              access to your conversation content.
             </li>
             <li>
               <strong className="text-neutral-200">
@@ -103,11 +105,9 @@ export default function PrivacyPage() {
               AI conversation history that you explicitly upload
             </li>
             <li>
-              <strong className="text-neutral-300">
-                Anonymous counters:
-              </strong>{" "}
-              Aggregate topic counts with no user ID attached — used only for
-              anonymous, aggregate reporting
+              <strong className="text-neutral-300">Usage counters:</strong>{" "}
+              Per-user counters such as total conversations and messages, stored
+              for dashboard display
             </li>
             <li>
               <strong className="text-neutral-300">
@@ -177,8 +177,8 @@ export default function PrivacyPage() {
           </ul>
           <p className="mt-3">
             We send email notifications at key points: when your trial expires,
-            10 days before data deletion, and when deletion occurs. We do not
-            hoard data from users who are not using the product.
+            when you enter the 30-day grace period, and when deletion occurs. We
+            do not hoard data from users who are not using the product.
           </p>
         </section>
 
@@ -199,7 +199,15 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong className="text-neutral-300">AWS:</strong> Cloud
-              infrastructure for hosting and data storage
+              infrastructure for API hosting and data storage
+            </li>
+            <li>
+              <strong className="text-neutral-300">Vercel:</strong> Frontend
+              hosting for the web dashboard
+            </li>
+            <li>
+              <strong className="text-neutral-300">Cloudflare:</strong> DNS
+              provider
             </li>
           </ul>
         </section>
@@ -229,8 +237,10 @@ export default function PrivacyPage() {
           </ul>
           <p className="mt-2">
             Manual deletion requests are processed immediately. All conversation
-            data, account information, and backups are permanently purged. A data
-            processing agreement is available on request for EU users.
+            data and account information are permanently deleted from the
+            database. Encrypted database backups are retained for up to 7 days
+            for disaster recovery, after which they are automatically purged. A
+            data processing agreement is available on request for EU users.
           </p>
         </section>
 
@@ -256,7 +266,18 @@ export default function PrivacyPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-100">
-            9. Contact
+            9. Age Requirement
+          </h2>
+          <p className="mt-2">
+            You must be at least 13 years old to use Chat Recall. If you are
+            under 16 and in the European Economic Area, you must have parental
+            consent.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-100">
+            10. Contact
           </h2>
           <p className="mt-2">
             For privacy questions or data requests, contact us at{" "}

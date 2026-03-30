@@ -12,9 +12,9 @@ const features = [
     icon: "&#x1F9F5;",
   },
   {
-    title: "Multi-Source Import",
+    title: "ChatGPT Import",
     description:
-      "Import from ChatGPT, Claude Code, local files, and Notion. All your AI conversations in one place.",
+      "Import your ChatGPT conversation history. More sources coming soon.",
     icon: "&#x1F4E5;",
   },
   {

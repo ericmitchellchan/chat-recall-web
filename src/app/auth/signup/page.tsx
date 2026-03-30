@@ -20,6 +20,23 @@ export default function SignUpPage() {
       <Suspense>
         <SignInForm />
       </Suspense>
+      <p className="mt-6 max-w-xs text-center text-xs text-neutral-500">
+        By signing up, you agree to our{" "}
+        <Link
+          href="/legal/terms"
+          className="text-neutral-400 underline hover:text-neutral-300"
+        >
+          Terms of Service
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/legal/privacy"
+          className="text-neutral-400 underline hover:text-neutral-300"
+        >
+          Privacy Policy
+        </Link>
+        .
+      </p>
       <p className="mt-8 text-sm text-neutral-500">
         Already have an account?{" "}
         <Link
